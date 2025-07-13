@@ -1,0 +1,25 @@
+{
+  "name": "hiring-info-app",
+  "version": "1.0.0",
+  "description": "A web application to gather hiring information including scores and badge name.",
+  "main": "src/app/page.tsx",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "pg": "^8.16.3",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.13",
+    "@types/pg": "^8.15.4",
+    "@types/react": "^19.1.8",
+    "typescript": "latest"
+  },
+  "license": "MIT"
+}
