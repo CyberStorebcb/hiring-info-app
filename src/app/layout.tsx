@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
-  description: "Coleta de informações para uma pessoa que será contratada",
+  description: "Processo de validação de tickets",
 };
 
 export default function RootLayout({
