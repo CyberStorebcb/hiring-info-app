@@ -177,7 +177,7 @@ const TicketForm: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
           </div>
         )}
         <div className={styles.inputGroup} style={{ marginBottom: 10 }}>
-          <label className={styles.inputLabel}>Número do Cartão</label>
+          <label className={styles.inputLabel}>Digite o número do cartão de crédito que irá receber</label>
           <input
             className={styles.inputField}
             type="text"
