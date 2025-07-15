@@ -45,7 +45,7 @@ const TicketForm: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSuccess(true);
+    setSuccess(false);
 
     const payload = {
       ticketNumber,
@@ -59,13 +59,18 @@ const TicketForm: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
       limiteValor
     };
 
-    await fetch("/api/ticket", {
+    const res = await fetch("/api/ticket", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
 
-    setTimeout(() => setSuccess(false), 2500);
+    if (res.ok) {
+      setSuccess(true);
+      setTimeout(() => setSuccess(false), 3000);
+    } else {
+      alert("Erro ao enviar o ticket. Tente novamente.");
+    }
   };
 
   return (
@@ -124,7 +129,7 @@ const TicketForm: React.FC<{ onBack?: () => void }> = ({ onBack }) => {
       </p>
       {success && (
         <div className={styles.successMsg} style={{ marginBottom: 18 }}>
-          Ticket enviado com sucesso!
+          ✅ Ticket enviado com sucesso!
         </div>
       )}
       <form onSubmit={handleSubmit} autoComplete="off">
